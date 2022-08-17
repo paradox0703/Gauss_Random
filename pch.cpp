@@ -1,4 +1,4 @@
-﻿// pch.cpp: 与预编译标头对应的源文件
+// pch.cpp: 与预编译标头对应的源文件
 
 #include "pch.h"
 #include "time.h"
@@ -49,8 +49,6 @@ bool check(double* a, double* b, int index)
 void Random_Position_Rectangle(double* w, double* q, int Amount, float length, float width)
 {
     srand((unsigned)time(NULL));
-    clock_t start, end;
-    start = clock();
     for (int i = 0; i < Amount; i++)
     {
         w[i] = 0 + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (0 + length)));
@@ -63,14 +61,10 @@ void Random_Position_Rectangle(double* w, double* q, int Amount, float length, f
             }
         }
     }
-    end = clock();   //结束时间
-    cout << "time = " << double(end - start) / CLOCKS_PER_SEC << "s" << endl;
 }
 void Random_Position_Square(double* w, double* q, int Amount, float length)
 {
     srand((unsigned)time(NULL));
-    clock_t start, end;
-    start = clock();
     for (int i = 0; i < Amount; i++)
     {
         w[i] = 0 + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (0 + length)));
@@ -83,14 +77,10 @@ void Random_Position_Square(double* w, double* q, int Amount, float length)
             }
         }
     }
-    end = clock();   //结束时间
-    cout << "time = " << double(end - start) / CLOCKS_PER_SEC << "s" << endl;
 }
 void Random_Position_Circle(double* w, double* q, int Amount, double radius)
 {
     srand((unsigned)time(NULL));
-    clock_t start, end;
-    start = clock();
     for (int i = 0; i < Amount; i++)
     {
         w[i] = 0 + static_cast <double> (rand()) / (static_cast <float> (RAND_MAX / (0 + radius * 2)));
@@ -105,6 +95,4 @@ void Random_Position_Circle(double* w, double* q, int Amount, double radius)
             }
         }
     }
-    end = clock();   //结束时间
-    cout << "time = " << double(end - start) / CLOCKS_PER_SEC << "s" << endl;
 }
