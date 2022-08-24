@@ -9,15 +9,28 @@
 
 // 添加要在此处预编译的标头
 #include "framework.h"
-#include <vector>
+#include <boost/array.hpp>
 using namespace std;
+using namespace boost;
+
+
 #endif //PCH_H
-extern "C"
-{
-    _declspec(dllexport) void Gauss_Height(vector<double>* Height, int Amount);
-    _declspec(dllexport) void Gauss_Diameter(vector<double>* Diameter, int Amount);
-    _declspec(dllexport) bool Calculate_distance(vector<double>* w, vector<double>* q, int index);
-    _declspec(dllexport) void Random_Position_Rectangle(vector<double>* w, vector<double>* q, int Amount, float length, float width);
-    _declspec(dllexport) void Random_Position_Square(vector<double>* w, vector<double>* q, int Amount, float length);
-    _declspec(dllexport) void Random_Position_Circle(vector<double>* w, vector<double>* q, int Amount, double radius);
-};
+    _declspec(dllexport) void Gauss_Height(double* Height, int Amount);
+    _declspec(dllexport) void Gauss_Diameter(double* Diameter, int Amount);
+    _declspec(dllexport) bool Calculate_distance(double* w, double* q, int index);
+    _declspec(dllexport) void Random_Position_Rectangle(double* w, double* q, int Amount, float length, float width);
+    _declspec(dllexport) void Random_Position_Square(double* w, double* q, int Amount, float length);
+    _declspec(dllexport) void Random_Position_Circle(double* w, double* q, int Amount, double radius);
+    template<int T>
+    _declspec(dllexport) void Gauss_Height(boost::array<double, T>* Height, int Amount);
+    template<int T>
+    _declspec(dllexport) void Gauss_Diameter(boost::array<double, T>* Diameter, int Amount);
+    template<int T>
+    _declspec(dllexport) bool Calculate_distance(boost::array<double, T>* w, boost::array<double, T>* q, int index);
+    template<int T>
+    _declspec(dllexport) void Random_Position_Rectangle(boost::array<double, T>* w, boost::array<double, T>* q, int Amount, float length, float width);
+    template<int T>
+    _declspec(dllexport) void Random_Position_Square(boost::array<double, T>* w, boost::array<double, T>* q, int Amount, float length);
+    template<int T>
+    _declspec(dllexport) void Random_Position_Circle(boost::array<double, T>* w, boost::array<double, T>* q, int Amount, double radius);
+
