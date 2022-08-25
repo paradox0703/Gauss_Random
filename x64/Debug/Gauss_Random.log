@@ -1,1 +1,4 @@
-﻿  pch.cpp
+﻿  pch.hpp
+  dllmain.cpp
+    正在创建库 D:\C++\Gauss_Random\x64\Debug\Gauss_Random.lib 和对象 D:\C++\Gauss_Random\x64\Debug\Gauss_Random.exp
+  Gauss_Random.vcxproj -> D:\C++\Gauss_Random\x64\Debug\Gauss_Random.dll
